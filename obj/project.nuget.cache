@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uVlCJFvVNzsLfIR0ZJCQbZ4o9m2/IEjj2/fr1bS1RMDoCuEdljGWPRQCTN5rBQM+5oQYy4tCLZVqEyvAXDQALg==",
+  "dgSpecHash": "R2jJoQzc+zxC9EVQURPf6NAyUooFILy3bfiij6QV4zR/O7FbBtZ8SxmD0XGVcCC3hc/zzXpgvf1mq/LPKtQULQ==",
   "success": true,
-  "projectFilePath": "/home/gaspar/Documentos/Proyectos/CSharp/console/CSharp.csproj",
+  "projectFilePath": "D:\\Documentos\\Proyectos\\c#\\csharp-console\\CSharp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
