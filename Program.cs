@@ -10,9 +10,8 @@ namespace CSharp
         {
             // Console.WriteLine("Holi");
 
-            // int[] arr = new int[] { 5, 5, 5, 5, 5 };
-            int[] arr = new int[] { 1, 2, 3, 4, 5 };
-            miniMaxSum(arr);
+            Console.WriteLine(countingValleys(8, "UDDDUDUU"));
+            // Console.WriteLine(countingValleys(8, "DDUUUUDD"));
 
             // List<int> l = new List<int>();
             // l.Add(0);
@@ -53,6 +52,64 @@ namespace CSharp
             // else {
             //     s=s2;
             // }
+        }
+
+        //cuenta los valles. un valle se da cuando se da la secuencia DU y esta baja y vuelve al nivel del mar. solo se considera valle recien cuando vuelve al nivel del mar. por lo tanto si debajo del nivel del mar hay "vallecitos" (DU) estos no deben ser contados sino hasta que el entero que te indica el nivl del mar es -1. tiene que ser -1 porque esto indica que esta por llegar al nivel del mar. Ultima obs: como yo estoy preguntando por el siguiente tengo que hacer el bucle hasta el ultimo menos uno, por lo tanto si justo se da la condicion en el ultimo salto no se contempla. por lo tanto tengo que agregar un condicional al final fuera del bucle para considerar esto.  
+        public static int countingValleys(int steps, string s)
+        {
+            int seaLevel = 0; int count = 0;
+
+            // Console.WriteLine("seaLevel: " + seaLevel);
+
+            for (int i = 0; i < s.Length - 1; i++)
+            {
+                // Console.WriteLine(i);
+
+                if (s[i].Equals(char.Parse("U")))
+                {
+                    if (seaLevel == -1)
+                    {
+                        Console.WriteLine("Termina valle");
+                        count++;
+                        Console.WriteLine("Count: " + count);
+                    }
+
+                    seaLevel++;
+                    // Console.WriteLine("U, seaLevel +: " + seaLevel);
+
+                }
+                else if (s[i].Equals(char.Parse("D")))
+                {
+                    seaLevel--;
+                    // Console.WriteLine("D, seaLevel -: " + seaLevel);
+                }
+            }
+
+            //si viene de nivel negativo y es una U significa que termina el valle
+            if (s[steps - 1].Equals(char.Parse("U")) && (seaLevel == -1))
+            {
+                Console.WriteLine("Termina valle");
+                count++;
+                Console.WriteLine("Count: " + count);
+            }
+
+
+            return count;
+        }
+
+        static string timeConversion(string s)
+        {    //07:05:45PM
+            DateTime dt1;
+            string time = "";
+
+            //convierto a datetime
+            bool res = DateTime.TryParse(s, out dt1);
+            if (res)
+            {
+                //convierto a string pero en formato 24hs
+                time = dt1.ToString("HH:mm:ss"); // 19:05:45
+            }
+            return time;
         }
 
         //i es el numero que no hay que sumar, l la lista.
