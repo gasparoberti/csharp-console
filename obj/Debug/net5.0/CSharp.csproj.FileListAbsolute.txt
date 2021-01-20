@@ -1,0 +1,16 @@
+/home/gaspar/Documentos/Proyectos/CSharp/console/bin/Debug/net5.0/CSharp
+/home/gaspar/Documentos/Proyectos/CSharp/console/bin/Debug/net5.0/CSharp.deps.json
+/home/gaspar/Documentos/Proyectos/CSharp/console/bin/Debug/net5.0/CSharp.runtimeconfig.json
+/home/gaspar/Documentos/Proyectos/CSharp/console/bin/Debug/net5.0/CSharp.runtimeconfig.dev.json
+/home/gaspar/Documentos/Proyectos/CSharp/console/bin/Debug/net5.0/CSharp.dll
+/home/gaspar/Documentos/Proyectos/CSharp/console/bin/Debug/net5.0/ref/CSharp.dll
+/home/gaspar/Documentos/Proyectos/CSharp/console/bin/Debug/net5.0/CSharp.pdb
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.csprojAssemblyReference.cache
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.GeneratedMSBuildEditorConfig.editorconfig
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.AssemblyInfoInputs.cache
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.AssemblyInfo.cs
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.csproj.CoreCompileInputs.cache
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.dll
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/ref/CSharp.dll
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.pdb
+/home/gaspar/Documentos/Proyectos/CSharp/console/obj/Debug/net5.0/CSharp.genruntimeconfig.cache
