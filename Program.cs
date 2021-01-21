@@ -8,53 +8,92 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            // Console.WriteLine("Holi");
+            Console.WriteLine("Holi");
 
-            Console.WriteLine(countingValleys(8, "UDDDUDUU"));
-            // Console.WriteLine(countingValleys(8, "DDUUUUDD"));
 
-            // List<int> l = new List<int>();
-            // l.Add(0);
-            // l.Add(0);
-            // l.Add(1);
-            // l.Add(0);
-            // l.Add(0);
-            // l.Add(1);
-            // l.Add(0);
-
-            // Console.WriteLine("Lista: " + printList(l));
-            // Console.WriteLine("Elementos: " + l.Count.ToString());
-
-            // int s1=0;
-            // int s2=0;
-
-            // //cuando cuenta siempre de a uno
-            // for (int i = 0; i < l.Count-1; i++)
-            // {
-            //     if(l[i+1]==0) {
-            //         s1+=1;
-            //     } 
-            // }
-
-            // //cuando considera saltos dobles
-            // for (int i = 0; i < l.Count-1; i++)
-            // {
-            //     if(l[i+1]==0 && l[i+2]==0) {
-            //         s2+=1;
-            //         i+=2;
-            //     } 
-            // }
-
-            // int s=0;
-            // if(s1<s2) {
-            //     s=s1;
-            // }
-            // else {
-            //     s=s2;
-            // }
         }
 
+        // Complete the rotLeft function below.
+        static int[] rotLeft(int[] a, int d)
+        {
+            int[] aux = new int[a.Length];
+            int j = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                j = i - d;
+                if (j < 0)
+                {
+                    j += a.Length;
+                }
+                aux[j] = a[i];
+            }
+
+            return aux;
+        }
+
+        // Complete the hourglassSum function below.
+        static int hourglassSum(int[][] arr)
+        {
+            int s = 0;
+            List<int> maxSum = new List<int>();
+
+            for (int i = 1; i < arr.Length - 1; i++)    //columna
+            {
+                for (int j = 1; j < arr.Length - 1; j++)    //fila
+                {
+                    Console.WriteLine("i: " + i + ", j: " + j);
+
+                    s += arr[i - 1][j - 1];     //arriba izq
+                    s += arr[i - 1][j];         //arriba
+                    s += arr[i - 1][j + 1];     //arriba der     
+
+                    s += arr[i][j];             //el del medio
+
+                    s += arr[i + 1][j - 1];     //abajo izq
+                    s += arr[i + 1][j];         //abajo
+                    s += arr[i + 1][j + 1];     //abajo der
+
+                    maxSum.Add(s);
+                    s = 0;
+                }
+            }
+
+            return maxSum.Max();
+        }
+
+        // Complete the repeatedString function below.
+        static long repeatedString(string s, long n) //todos los casos con numeros long largos terminan por tiempo de ejecucion y no se como optimizarlo
+        {
+            //formo el string
+            string ese = repeatString(s, n);
+
+            //cuento las a's
+            return contarString(ese, char.Parse("a"));
+            // return 1;
+        }
+
+        static string TrimEndLong(string ese, long n)
+        {
+            string s = "";
+            foreach (char c in ese)
+            {
+                if (--n < 0)
+                {
+                    break;
+                }
+                else
+                {
+                    s += c;
+                }
+            }
+            return s;
+        }
+
+
         //cuenta los valles. un valle se da cuando se da la secuencia DU y esta baja y vuelve al nivel del mar. solo se considera valle recien cuando vuelve al nivel del mar. por lo tanto si debajo del nivel del mar hay "vallecitos" (DU) estos no deben ser contados sino hasta que el entero que te indica el nivl del mar es -1. tiene que ser -1 porque esto indica que esta por llegar al nivel del mar. Ultima obs: como yo estoy preguntando por el siguiente tengo que hacer el bucle hasta el ultimo menos uno, por lo tanto si justo se da la condicion en el ultimo salto no se contempla. por lo tanto tengo que agregar un condicional al final fuera del bucle para considerar esto.  
+        // Console.WriteLine(countingValleys(8, "UDDDUDUU")); -> 1
+        // Console.WriteLine(countingValleys(8, "DDUUUUDD")); -> 1
+
         public static int countingValleys(int steps, string s)
         {
             int seaLevel = 0; int count = 0;
@@ -208,6 +247,26 @@ namespace CSharp
             return s;
         }
 
+        //concatena el mismo string al final hasta que el string final tenga n caracteres
+        static string repeatString(string s, long n)
+        {
+            string ese = "";
+            long ene = (n / (s.Length));
+
+            for (int j = 0; j < ene; j++)
+            {
+                ese += s;
+            }
+
+            for (int j = 0; j < (n % s.Length); j++)
+            {
+                ese += s[j];
+            }
+
+            Console.WriteLine(ese.Length);
+            return ese;
+        }
+
         // Complete the plusMinus function below.
         static void plusMinus(int[] arr)
         {
@@ -323,7 +382,21 @@ namespace CSharp
             return n;
         }
 
-        //bueca si existe numero en la lista l
+        static long contarString(string s, char c)
+        {
+            long n = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i].Equals(c))
+                {
+                    n += 1;
+                }
+            }
+
+            return n;
+        }
+
+        //busca si existe numero en la lista l
         static Boolean buscar(List<int> l, int numero)
         {
             Boolean f = false;
